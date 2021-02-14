@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        .bg1{
+            background-image: url("./media/bg.gif");
+        }
+        .bold
+        {
+            font-weight: bold;
+        }
+        .border
+        {
+            border-radius: 20px;box-shadow: 0px 0px 10px cyan;
+        }
+    </style>
+</head>
+<body class="bg1 text-secondary p-5">
+
+    <div class="container p-5">
+        <div class="row justify-content-center ">
+            <div class="col-5 text-center bg-light border">
+                <label for="customer" class="p-2 bold">Customer Info</label>
+                <div class="row justify-content-center" id="customer" > 
+                    <div class="col-5 p-1 m-1 input-group-sm" >
+                        <label for="custname">Customer Name</label>
+                        <input required="true" type="text" id="custname" class="form-control" style=" border-radius: 20px;box-shadow: 0px 0px 10px cyan;">
+                    </div>
+                    <div class="col-5 p-1 m-1 input-group-sm">
+                        <label for="custid">Customer id</label>
+                        <input required="true" type="number" id="custid" class="form-control" style=" border-radius: 20px;box-shadow: 0px 0px 10px cyan;">
+                    </div>
+                    <div class="col-5 p-1 m-1 input-group-sm">
+                        <label for="custdiscount">Discount(in %)</label>
+                        <input required="true" type="number" id="custdiscount" class="form-control" style=" border-radius: 20px;box-shadow: 0px 0px 10px cyan;">
+                    </div>
+                </div>
+                <label for="invoice" class="p-2 bold">Invoice Info</label>
+                <div class="row justify-content-center" id="invoice"> 
+                    <div class="col-5 p-1 m-1 input-group-sm">
+                        <label for="invoiceid">Invoice id</label>
+                        <input required="true" type="number" id="invoiceid" class="form-control" style=" border-radius: 20px;box-shadow: 0px 0px 10px cyan;">
+                    </div>
+                    <div class="col-5 p-1 m-1 input-group-sm">
+                        <label for="amount">Amount</label>
+                        <input required="true" type="number" id="amount" class="form-control" style=" border-radius: 20px;box-shadow: 0px 0px 10px cyan;">
+                    </div>
+                </div>
+                <label for="account" class="p-2 bold">Account Info</label>
+                <div class="row justify-content-center" id="invoice"> 
+                    <div class="col-5 p-1 m-1 input-group-sm">
+                        <label for="accountid">Account id</label>
+                        <input required="true" type="number" id="accountid" class="form-control" style=" border-radius: 20px;box-shadow: 0px 0px 10px cyan;">
+                    </div>
+                    <div class="col-5 p-1 pb-2 m-1 input-group-sm">
+                        <label for="balance">Balance(in Rs.)</label>
+                        <input required type="number" id="balance" class="form-control" style=" border-radius: 20px;box-shadow: 0px 0px 10px cyan;">
+                    </div>
+                </div>
+                <div class="row p-1">
+                    <button type="submit" class="btn-info border p-1" id="btn">Submit</button>
+                </div>
+            </div>
+            <div class="col-8 bg-light border mt-5" id="content">
+                <div class="row p-2 m-2 border">
+                    <div class="col-12 bold text-center">
+                        INVOICE
+                    </div>
+                </div>
+                
+                <div class="row p-2 m-2 border">
+                    
+                    <div class="col-12 p-1">
+                        <div class="bold">
+                            Invoice Id :
+                        </div>
+                        <div id="invoiceid1"></div>
+                    </div>
+                    <div class="col-12 p-1">
+                        <span class="bold">
+                            Amount:
+                        </span>
+                        <span id="amount1"></span>
+                    </div>
+                    <div class="col-12 p-1">
+                        <div class="bold">
+                            Amount after discount :
+                        </div>
+                        <div id="aad1"></div>
+                    </div>
+                </div>
+                <div class="row p-2 m-2 border">
+                    <div class="col-12 p-1">
+                        <div class="bold">
+                            Customer Id :
+                        </div>
+                        <div id="custid1"></div>
+                    </div>
+                    <div class="col-12 p-1">
+                        <div class="bold">
+                            Customer Name :
+                        </div>
+                        <div id="custname1"></div>
+                    </div>
+                    <div class="col-12 p-1">
+                        <div class="bold">
+                            Discount :
+                        </div>
+                        <div id="custdiscount1"></div>
+                    </div>
+                   
+                    
+                </div>
+                
+                <div class="row p-2 m-2 border">
+                    <div class="col-12 p-1">
+                        <div class="bold">
+                            Account Id :
+                        </div>
+                        <div id="accountid1"></div>
+                    </div>
+                    <div class="col-12 p-1">
+                        <div class="bold">
+                            Balance :
+                        </div>
+                        <div id="balance1"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="./public/script.js"></script> 
+</body>
+</html>
